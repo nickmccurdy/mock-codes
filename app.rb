@@ -1,8 +1,14 @@
 require 'bundler'
 Bundler.require
 
+def get_or_post(path, opts={}, &block)
+  get(path, opts, &block)
+  post(path, opts, &block)
+end
+
 class MockIssues < Sinatra::Base
   codes = {
+    '200' => 'Successful',
     '400' => 'Bad Request',
     '401' => 'Unauthorized',
     '402' => 'Payment Required',
@@ -41,7 +47,24 @@ class MockIssues < Sinatra::Base
     '510' => 'Not Extended'
   }
 
-  get '/:code' do
+  get '/' do
+    @codes = codes
+    
+    erb :index
+  end
+
+  get_or_post '/hesitate' do
+    sleep 5
+
+    body "5 seconds later..."
+  end
+
+  get_or_post '/timeout' do
+    sleep 30
+    body "30 seconds later..."
+  end
+
+  get_or_post '/:code' do
     code = params[:code]
     message = codes[code]
 
