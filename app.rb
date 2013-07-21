@@ -9,6 +9,15 @@ end
 class MockIssues < Sinatra::Base
   codes = {
     '200' => 'Successful',
+    '300' => 'Multiple Choices',
+    '301' => 'Moved Permanently',
+    '302' => 'Found',
+    '303' => 'See Other',
+    '304' => 'Not Modified',
+    '305' => 'Use Proxy',
+    '306' => 'Switch Proxy',
+    '307' => 'Temporary Redirect',
+    '308' => 'Permanent Redirect',
     '400' => 'Bad Request',
     '401' => 'Unauthorized',
     '402' => 'Payment Required',
@@ -73,7 +82,7 @@ class MockIssues < Sinatra::Base
       message = codes[code]
     end
 
-    status code.to_i
     body message
+    halt code.to_i
   end
 end
