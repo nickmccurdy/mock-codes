@@ -69,8 +69,8 @@ class MockIssues < Sinatra::Base
   end
 
   get_or_post '/timeout' do
-    sleep 30
-    body "30 seconds later..."
+    sleep 28
+    body "28 seconds later..."
   end
 
   get_or_post '/:code' do
