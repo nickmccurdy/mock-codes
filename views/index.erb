@@ -35,6 +35,7 @@
 
 			table td {
 				padding: 7px 10px;
+				vertical-align: top;
 			}
 
 			table tr {
@@ -45,10 +46,65 @@
 				background: rgb(221,229,254);
 			}
 
+		.promo-form {
+			border: none;
+			margin: 1em 0;
+			padding: 2em 0;
+			border: 4px solid rgb(200,200,200);
+			border-left: none;
+			border-right: none;
+		}
+
+			.promo-form fieldset {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+
+			.promo-form legend {
+				display: block;
+				font-weight: bold;
+				margin: 0;
+				padding: 0;
+			}
+
+			.promo-form p {
+				margin: 0 0 0.5em;
+			}
+
+			.promo-form input {
+				display: inline-block;
+				border: 1px solid rgba(0, 0, 0, 0.25);
+				font-size: 1em;
+				font-family: inherit;
+				font-weight: 400;
+				font-style: normal;
+				padding: 0.5em;
+				border-radius: 4px;
+				margin: 0;
+			}
+
+			.promo-form .btn {
+				display: inline-block;
+				font-size: 1em;
+				font-family: inherit;
+				font-weight: 400;
+				font-style: normal;
+				padding: 0.5em 1em;
+				border-radius: 4px;
+				cursor: pointer;
+				border: none;
+				color: rgb(255,255,255);
+				background: rgb(212,63,63);
+			}
+
+			.promo-form .btn:hover {
+				background: rgb(192,43,43);
+			}
+
 		footer {
-			border-top: 1px solid rgb(220,220,220);
 			font-size: 0.875em;
-			margin: 3em 0;
+			margin: 0 0 3em;
 			padding-top: 2em;
 		}
 	</style>
@@ -83,7 +139,15 @@
 			</tr>
 		</tbody>
 	</table>
-	<p>If something is missing, drop us a line at hello@isssues.com.</p>
+	<p>If something is missing, drop me a line at hello@uncluttah.com.</p>
+	<form action="http://uncluttah.us4.list-manage.com/subscribe/post?u=517745ffc3d20f8f98133845c&amp;id=47fe1a03b3" method="post" class="promo-form">
+		<fieldset>
+			<legend>Boost your developer-fu</legend>
+			<p>Get simple tips on how to build a better web — delivered weekly.</p>
+			<input type="email" value="" name="EMAIL" class="email" placeholder="email@address.com" size="30">
+			<button class="btn btn-primary">Join Now</button>
+		</fieldset>
+	</form>
 	<footer>
 		&copy; 2012 Built by <a href="http://uncluttah.com">Uncluttah</a> in Boston.
 	</footer>
@@ -94,7 +158,7 @@
 	    t.type  = 'text/javascript';
 	    t.async = true;
 	    t.id    = 'gauges-tracker';
-	    t.setAttribute('data-site-id', '502d9c58613f5d0d16000015');
+	    t.setAttribute('data-site-id', '51eb4c5af5a1f525fb00000b');
 	    t.src = '//secure.gaug.es/track.js';
 	    var s = document.getElementsByTagName('script')[0];
 	    s.parentNode.insertBefore(t, s);
