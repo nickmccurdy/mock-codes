@@ -86,4 +86,56 @@ class MockIssues < Sinatra::Base
     body message
     halt code.to_i
   end
+
+  put '/:code' do
+    code = params[:code]
+    message = codes[code]
+
+    if message.nil?
+      code = '404'
+      message = codes[code]
+    end
+
+    body message
+    halt code.to_i
+  end
+
+  delete '/:code' do
+    code = params[:code]
+    message = codes[code]
+
+    if message.nil?
+      code = '404'
+      message = codes[code]
+    end
+
+    body message
+    halt code.to_i
+  end
+
+  options '/:code' do
+    code = params[:code]
+    message = codes[code]
+
+    if message.nil?
+      code = '404'
+      message = codes[code]
+    end
+
+    body message
+    halt code.to_i
+  end
+
+  patch '/:code' do
+    code = params[:code]
+    message = codes[code]
+
+    if message.nil?
+      code = '404'
+      message = codes[code]
+    end
+
+    body message
+    halt code.to_i
+  end
 end
