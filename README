@@ -6,7 +6,7 @@ http://mock.isssues.com/{RESPONSE}
 
 These responses are supported and can be called using these HTTP verbs: **GET**, **POST**, **PUT**, **DELETE**, **OPTIONS**, and **PATCH**.
 
-If something is missing, drop me a line at hello@uncluttah.com or fork the repo and submit a pull request.
+If something is missing-like tests-drop me a line at hello@uncluttah.com or fork the repo and submit a pull request.
 
 ## Installation
 
