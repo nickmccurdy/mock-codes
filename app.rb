@@ -1,9 +1,10 @@
 require 'bundler'
 Bundler.require
 
-def get_or_post(path, opts={}, &block)
-  get(path, opts, &block)
-  post(path, opts, &block)
+def any(url, verbs = %w(get post put delete options patch), &block)
+  verbs.each do |verb|
+    send(verb, url, &block)
+  end
 end
 
 class MockIssues < Sinatra::Base
@@ -63,70 +64,18 @@ class MockIssues < Sinatra::Base
     erb :index
   end
 
-  get_or_post '/hesitate' do
+  any '/hesitate' do
     sleep 5
 
     body "5 seconds later..."
   end
 
-  get_or_post '/timeout' do
+  any '/timeout' do
     sleep 28
     body "28 seconds later..."
   end
 
-  get_or_post '/:code' do
-    code = params[:code]
-    message = codes[code]
-
-    if message.nil?
-      code = '404'
-      message = codes[code]
-    end
-
-    body message
-    halt code.to_i
-  end
-
-  put '/:code' do
-    code = params[:code]
-    message = codes[code]
-
-    if message.nil?
-      code = '404'
-      message = codes[code]
-    end
-
-    body message
-    halt code.to_i
-  end
-
-  delete '/:code' do
-    code = params[:code]
-    message = codes[code]
-
-    if message.nil?
-      code = '404'
-      message = codes[code]
-    end
-
-    body message
-    halt code.to_i
-  end
-
-  options '/:code' do
-    code = params[:code]
-    message = codes[code]
-
-    if message.nil?
-      code = '404'
-      message = codes[code]
-    end
-
-    body message
-    halt code.to_i
-  end
-
-  patch '/:code' do
+  any '/:code' do
     code = params[:code]
     message = codes[code]
 
