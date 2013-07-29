@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/repos/51f5d558c7f3a35b39003ba0/badges/f1e6fdaf53882e73eae4/gpa.png)](https://codeclimate.com/repos/51f5d558c7f3a35b39003ba0/feed)
+[![Code Climate](https://codeclimate.com/github/matthewcrist/mock-response.png)](https://codeclimate.com/github/matthewcrist/mock-response)
 
 Sometimes in the course of development you may need to mock HTTP responses. This is a simple service to return various HTTP responses.
 
