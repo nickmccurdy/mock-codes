@@ -125,16 +125,16 @@
 		<tbody>
 			<% @codes.each_pair do |code, description| %>
 				<tr>
-					<td><strong><%= code %></strong></td>
+					<td><a href="/<%= code %>"><strong><%= code %></strong></a></td>
 					<td><%= description %></td>
 				</tr>
 			<% end %>
 			<tr>
-				<td><strong>timeout</strong></td>
+				<td><a href="/timeout"><strong>timeout</strong></a></td>
 				<td>Waits 30 seconds before returning successfully.</td>
 			</tr>
 			<tr>
-				<td><strong>hesitate</strong></td>
+				<td><a href="/hesitate"><strong>hesitate</strong></a></td>
 				<td>Waits 5 seconds before returning successfully.</td>
 			</tr>
 		</tbody>
