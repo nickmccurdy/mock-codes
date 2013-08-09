@@ -34,11 +34,11 @@ class MockIssues < Sinatra::Base
     message = codes[code]
 
     if message.nil?
-      code = '404'
+      code = 404
       message = codes[code]
     end
 
     body message
-    halt code.to_i
+    halt code
   end
 end
