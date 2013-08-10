@@ -16,7 +16,9 @@ RSpec.configure do |config|
   config.include Rack::Test::Methods
 end
 
-CODES = YAML::load_file(File.join(__dir__, '..', 'codes.yml'))
+def each_code(codes = YAML::load_file(File.join(__dir__, '..', 'codes.yml')), &block)
+  codes.each(&block)
+end
 
 def each_verb(url, verbs = %w(get post put delete options patch))
   verbs.each do |verb|

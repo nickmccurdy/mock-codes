@@ -6,7 +6,7 @@ describe MockIssues do
     last_response.should be_ok
   end
 
-  CODES.each do |code, text|
+  each_code do |code, text|
     it "responds with #{code} (#{text})" do
       each_verb "/#{code}" do
         last_response.status.should == code
