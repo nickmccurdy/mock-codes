@@ -17,3 +17,10 @@ RSpec.configure do |config|
 end
 
 CODES = YAML::load_file(File.join(__dir__, '..', 'codes.yml'))
+
+def each_verb(url, verbs = %w(get post put delete options patch))
+  verbs.each do |verb|
+    send(verb, url)
+    yield
+  end
+end
