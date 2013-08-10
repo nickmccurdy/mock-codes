@@ -1,14 +1,12 @@
 require 'spec_helper'
 
 describe MockIssues do
-  @codes = YAML::load_file(File.join(__dir__, '..', 'codes.yml'))
-
   it 'should load the home page' do
     get '/'
     last_response.should be_ok
   end
 
-  @codes.each do |code, text|
+  CODES.each do |code, text|
     it "should respond with #{code} (#{text})" do
       get "/#{code}"
       last_response.status.should == code
