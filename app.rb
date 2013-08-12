@@ -11,6 +11,8 @@ end
 
 class MockIssues < Sinatra::Base
   codes = YAML::load_file('codes.yml')
+
+  # Read ENV variables for hesitate and timeout
   hesitateTime = ENV['MOCK_HESITATE'] || 2
   timeoutTime = ENV['MOCK_TIMEOUT'] || 2
 

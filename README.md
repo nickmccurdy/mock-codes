@@ -20,3 +20,20 @@ bundle exec unicorn
 ```
 
 That's it.
+
+## Testing
+
+You can run the test suite with 
+
+```sh
+rake spec
+```
+
+## Timeout & Hesitation
+
+Timeout and hesitation are configurable via ENV variables. In your environment change these to whatever you'd like.
+
+```sh
+MOCK_HESITATE=5
+MOCK_TIMEOUT=28
+```
