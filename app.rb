@@ -25,12 +25,12 @@ class MockIssues < Sinatra::Base
   any '/hesitate' do
     sleep hesitateTime
 
-    body "5 seconds later..."
+    body "#{hesitateTime} seconds later..."
   end
 
   any '/timeout' do
     sleep timeoutTime
-    body "28 seconds later..."
+    body "#{timeoutTime} seconds later..."
   end
 
   any '/:code' do
