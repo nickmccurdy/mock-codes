@@ -11,6 +11,8 @@ end
 
 class MockIssues < Sinatra::Base
   codes = YAML::load_file('codes.yml')
+  hesitateTime = ENV['MOCK_HESITATE'] || 2
+  timeoutTime = ENV['MOCK_TIMEOUT'] || 2
 
   get '/' do
     @codes = codes
@@ -19,13 +21,13 @@ class MockIssues < Sinatra::Base
   end
 
   any '/hesitate' do
-    sleep 5
+    sleep hesitateTime
 
     body "5 seconds later..."
   end
 
   any '/timeout' do
-    sleep 28
+    sleep timeoutTime
     body "28 seconds later..."
   end
 
