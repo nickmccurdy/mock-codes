@@ -1,4 +1,5 @@
-[![Code Climate](https://codeclimate.com/github/matthewcrist/mock-response.png)](https://codeclimate.com/github/matthewcrist/mock-response) [![Build Status](https://travis-ci.org/matthewcrist/mock-response.png?branch=master)](https://travis-ci.org/matthewcrist/mock-response)
+# Mock Response
+[![Build Status](https://travis-ci.org/matthewcrist/mock-response.png?branch=master)](https://travis-ci.org/matthewcrist/mock-response) [![Dependency Status](https://gemnasium.com/matthewcrist/mock-response.png)](https://gemnasium.com/matthewcrist/mock-response) [![Code Climate](https://codeclimate.com/github/matthewcrist/mock-response.png)](https://codeclimate.com/github/matthewcrist/mock-response)
 
 Sometimes in the course of development you may need to mock HTTP responses. This is a simple service to return various HTTP responses.
 
