@@ -27,7 +27,7 @@ describe MockIssues do
           # 5 second delay
           each_verb '/hesitate' do
             expect(last_response).to be_ok
-            expect(last_response.body).to eq '5 seconds later...'
+            expect(last_response.body).to eq "#{ENV['MOCK_HESITATE'] || 2} seconds later..."
           end
         end
       end
@@ -37,7 +37,7 @@ describe MockIssues do
           # 28 second delay
           each_verb '/timeout' do
             expect(last_response).to be_ok
-            expect(last_response.body).to eq '28 seconds later...'
+            expect(last_response.body).to eq "#{ENV['MOCK_TIMEOUT'] || 2} seconds later..."
           end
         end
       end
